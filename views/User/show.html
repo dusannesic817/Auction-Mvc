@@ -1,0 +1,17 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+<div class="container  mt-5">
+    <p>{{ userAuction.forename|escape}}</p>
+    <p>{{ userAuction.surname|escape}}</p>
+    <p>{{ userAuction.email|escape}}</p>
+    <p>{{ userAuction.phone|escape}}</p>
+
+    </div>
+
+            {% endblock %}
+
+{% block title %}
+{{ userAuction.forname|escape}}
+{% endblock %}
+
