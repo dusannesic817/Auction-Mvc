@@ -4,6 +4,7 @@ namespace App\Controllers;
 use App\Core;
 use \App\Core\Controller;
 use App\Core\DatabaseConnection;
+use App\Models\AuctionModel;
 use App\Models\OfferModel;
 
 
@@ -30,6 +31,22 @@ class  AuctionController extends Controller {
 
         }
         $this->set('lastOfferPrice', $lastOfferPrice);
+
+        $auctionViewModel = new  \App\Models\AuctionViewModel($this->getDatabaseConnection());
+
+        $ipAdress = filter_input(INPUT_SERVER, 'REMOTE_ADDR');
+        $userAgent = filter_input(INPUT_SERVER, 'HTTP_USER_AGENT');
+        
+        $auctionViewModel ->add(
+            [
+                'auction_id' => $id,
+                'ip_adress' => $ipAdress,
+                'user_agent' => $userAgent
+                
+            ]
+
+        );
+
 
     }
 

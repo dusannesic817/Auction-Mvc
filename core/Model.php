@@ -14,6 +14,10 @@ abstract class Model{
     }
 
 
+    protected function getFields() : array{
+        return [ ];
+    }
+
     final protected function getConnection(){
         return $this->dbc->getConnection();
     }
@@ -143,6 +147,93 @@ final  function getPrimaryKeyName(){
         }
 
         return $items;
+
+    }
+
+    private function  checkFieldListValid(array $data) {
+        $fields= $this->getFields();
+
+        $supportedFieldNames = array_keys($fields);
+        $requestedFieldNames = array_keys($data);
+
+        foreach($requestedFieldNames as $value){
+
+            if(!in_array($value, $supportedFieldNames)){
+
+                throw new \Exception('Field '. $value . 'is not supported');
+
+            }
+        }
+
+        if( !$fields[$value]->isEditable() ){
+
+            throw new \Exception('Field '. $value . 'is not editable');
+
+        }
+
+        if( !$fields[$value]->isValid($data[$value]) ){
+
+            throw new \Exception('The value '. $value . ' is not valid');
+
+        }
+
+    }
+
+    final public function add(array $data){
+
+        $this->checkFieldListValid($data);
+
+        $tableName = $this->getTableName();
+        $sqlFieldNames = implode(', ', array_keys($data));
+        $questionMarks = implode(', ', array_fill(0, count($data), '?'));
+        
+        $sql = "INSERT INTO {$tableName} ({$sqlFieldNames}) VALUES ({$questionMarks})";
+        $stmt = $this->dbc->getConnection()->prepare($sql);
+        $res = $stmt->execute(array_values($data));
+        
+        if (!$res) {
+            return false;
+        }
+        
+        return $this->dbc->getConnection()->lastInsertId();
+        
+    }
+
+
+    final public function editById(int $id, array $data){
+        $this->checkFieldListValid($data);
+
+        $tableName = $this->getTableName();
+
+        $editList=[];
+        $values=[];
+
+        foreach($data as $key => $values){
+
+            $editList[]= "{$key} = ?";
+            $values[]= $values;
+
+
+        }
+
+        $editString= implode(', ', $editList);
+        $values[] = $id;
+
+        $sql= "UPDATE {$tableName} SET  {$editString}   WHERE {$tableName}_id = ?;";
+        $stmt = $this->dbc->getConnection()->prepare($sql);
+        return  $stmt->execute(array_values($data));
+
+    }
+
+
+    public function deleteById($id){
+        $tableName= $this->getTableName();
+       
+        $sql = "DELETE  FROM $tableName WHERE {$tableName}_id=?";
+        $stmt= $this->dbc->getConnection()->prepare($sql);
+        return $stmt->execute([$id]);
+ 
+
 
     }
 

@@ -4,6 +4,7 @@ namespace App\Controllers;
 use App\Core;
 use \App\Core\Controller;
 use App\Core\DatabaseConnection;
+use App\Models\AuctionViewModel;
 
 
 class MainController extends Controller {
@@ -15,7 +16,12 @@ class MainController extends Controller {
 
         $this->set('categories', $categories);
         
+        $auctionViewModel = new AuctionViewModel($this->getDatabaseConnection());
+
+        $auctionViewModel->deleteById(1);
     }
+
+
 
 }
 
