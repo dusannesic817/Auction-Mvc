@@ -1,0 +1,49 @@
+.margine_right{
+    margin-right: 25rem;
+}
+
+.margine_left{
+    margin-left: 25rem;
+
+}
+
+.navbar_text{
+    color: white;
+}
+
+.navbar_text_green{
+    color: white;
+    border: 1px solid  rgb(12, 176, 12);
+    border-radius: 7px;
+    margin-right: 0.3rem;
+    background-color: rgb(12, 176, 12);
+    padding-top: 5px;
+}
+
+.navbar_text_orange{
+    color: white;
+    border: 1px solid  rgb(250, 179, 47);
+    border-radius: 7px;
+    margin-right: 0.3rem;
+    background-color: rgb(241, 171, 41);
+    padding-top: 5px;
+}
+
+.navbar_text_orange:hover{
+    color: white;
+    border: 1px solid  rgb(215, 140, 0);
+    border-radius: 7px;
+    margin-right: 0.3rem;
+    background-color: rgb(232, 151, 0);
+    padding-top: 5px;
+}
+
+.navbar_text_green:hover{
+    color: white;
+    border: 1px solid  rgb(6, 125, 6);
+    border-radius: 7px;
+    margin-right: 0.3rem;
+    background-color:rgb(6, 125, 6);
+    padding-top: 5px;
+}
+

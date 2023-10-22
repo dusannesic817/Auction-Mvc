@@ -48,97 +48,100 @@ class __TwigTemplate_35346ef7087793cfaf05069785cb5cf5 extends Template
         // line 9
         $this->displayBlock('title', $context, $blocks);
         echo " - Auctiondo</title>
+    <link rel=\"stylesheet\" href=\"../../public/css/style.css\">
 
 </head>
 <body>
-    
-    <head>
-        <nav class=\"navbar navbar-expand-lg\"  style=\"background-color: #4B0082;\">
-            <div class=\"container-fluid\">
-              <a class=\"navbar-brand\" href=\"#\">
-                <img src=\"/docs/5.3/assets/brand/bootstrap-logo.svg\" alt=\"Logo\" width=\"30\" height=\"24\" class=\"d-inline-block align-text-top\">
-                Auctiondo
-              </a>
-              <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
-                <span class=\"navbar-toggler-icon\"></span>
-              </button>
-              <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">
-                <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
-                  <li class=\"nav-item\">
-                    <a class=\"nav-link active\" aria-current=\"page\" href=\"/home\">Home</a>
-                  </li>
-                  <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"#\">Link</a>
-                  </li>
-                  
-                  <li class=\"nav-item dropdown\">
-                    <a class=\"nav-link dropdown-toggle\" href=\"/category/";
-        // line 34
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["category"] ?? null), "category_id", [], "any", false, false, false, 34), "html", null, true);
+
+  <header>
+    <nav class=\"navbar navbar-expand-lg\" style=\"background-color: #4B0082;\">
+      <div class=\"container-fluid\">
+        <div class=\"margine_left\" >
+        <a class=\"navbar-brand \" href=\"#\" style=\"border: 1px solid black; display: inline-block;\">
+          <img src=\"../../public/images/logo.png\" alt=\"Logo\" width=\"75\" height=\"50\" class=\"d-inline-block align-text-top\">
+
+          <p class=\"navbar_text\" style=\"border: 1px solid black; display: inline-block;\">Auction</p>
+        </a>
+
+      </div>
+        <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+          <span class=\"navbar-toggler-icon\"></span>
+        </button>
+        <div class=\"collapse navbar-collapse margine_right\" id=\"navbarSupportedContent\">
+          <ul class=\"navbar-nav ms-auto mb-2 mb-lg-0\">
+            <li class=\"nav-item\">
+              <a class=\"nav-link navbar_text_green \" aria-current=\"page\" href=\"/register\">Register</a>
+            </li>
+            <li class=\"nav-item\">
+              <a class=\"nav-link navbar_text_orange\" href=\"/log-in\">Login</a>
+            </li>
+            <li class=\"nav-item\">
+              <a class=\"nav-link navbar_text\" href=\"/profile\">Profile</a>
+            </li>
+            <li class=\"nav-item\">
+              <a class=\"nav-link navbar_text\" href=\"/log-out\">LogOut</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div style=\" background-color: #280144;\" class=\"navbar navbar-expand-lg\">
+      <div class=\"container-fluid margine_left\">
+        <form class=\"d-flex\" role=\"search\">
+            <input class=\"form-control me-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">
+            <button class=\"btn btn-outline-success navbar_text_orange\" type=\"submit\">Search</button>
+          </form>
+        </div>
+      <div class=\"collapse navbar-collapse margine_right\" id=\"navbarSupportedContent\">
+        <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
+          <li class=\"nav-item\">
+            <a class=\"nav-link navbar_text\" aria-current=\"page\" href=\"/home\">Home</a>
+          </li>
+          <li class=\"nav-item\">
+            <a class=\"nav-link navbar_text\" href=\"#\">Link</a>
+          </li>
+          
+          <li class=\"nav-item dropdown\">
+            <a class=\"nav-link dropdown-toggle navbar_text\" href=\"/category/";
+        // line 64
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["category"] ?? null), "category_id", [], "any", false, false, false, 64), "html", null, true);
         echo "\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
-                      Categories
-                    </a>
-                    <ul class=\"dropdown-menu\">
-                        ";
-        // line 38
+              Categories
+            </a>
+            <ul class=\"dropdown-menu\">
+                ";
+        // line 68
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["categories"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 39
-            echo "                      <li><a class=\"dropdown-item\" href=\"/category/";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category_id", [], "any", false, false, false, 39), "html", null, true);
+            // line 69
+            echo "              <li><a class=\"dropdown-item\" href=\"/category/";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category_id", [], "any", false, false, false, 69), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 39), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 69), "html", null, true);
             echo "</a></li>
-                      ";
+              ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 41
-        echo "                      
-                    </ul>
-                  </li>
-                
-                </ul>
-                <div class=\"d-flex justify-content-center container-fluid\">
-                <form class=\"d-flex\" role=\"search\">
-                    <input class=\"form-control me-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">
-                    <button class=\"btn btn-outline-success\" type=\"submit\">Search</button>
-                  </form>
-                </div>
-             
-           
+        // line 71
+        echo "              
+            </ul>
+          </li>
+        
+        </ul>
+        </div>
+    </div>
+  </header>
 
-                <ul class=\"navbar-nav me-auto mb-2 mb-lg-0\">
-                  <li class=\"nav-item\">
-                    <a class=\"nav-link active\" aria-current=\"page\" href=\"/register\">Register</a>
-                  </li>
-                  <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"/log-in\">Login</a>
-                  </li>
-                  <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"/profile\">Profile</a>
-                  </li>
-                  <li class=\"nav-item\">
-                    <a class=\"nav-link\" href=\"/log-out\">LogOut</a>
-                  </li>
-                  </ul>
-                
-             
-                  
-             
-              </div>
-            </div>
-          </nav>
-      
-    </head>
-
+  
+  
         <main>
             ";
-        // line 80
-        $this->displayBlock('main', $context, $blocks);
         // line 83
+        $this->displayBlock('main', $context, $blocks);
+        // line 86
         echo "        </main>
 
         <footer>
@@ -156,11 +159,11 @@ class __TwigTemplate_35346ef7087793cfaf05069785cb5cf5 extends Template
         echo "Home";
     }
 
-    // line 80
+    // line 83
     public function block_main($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 81
+        // line 84
         echo "            
             ";
     }
@@ -177,7 +180,7 @@ class __TwigTemplate_35346ef7087793cfaf05069785cb5cf5 extends Template
 
     public function getDebugInfo()
     {
-        return array (  164 => 81,  160 => 80,  153 => 9,  142 => 83,  140 => 80,  99 => 41,  88 => 39,  84 => 38,  77 => 34,  49 => 9,  39 => 1,);
+        return array (  167 => 84,  163 => 83,  156 => 9,  145 => 86,  143 => 83,  129 => 71,  118 => 69,  114 => 68,  107 => 64,  49 => 9,  39 => 1,);
     }
 
     public function getSourceContext()
