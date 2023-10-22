@@ -47,3 +47,12 @@
     padding-top: 5px;
 }
 
+.category_text{
+
+    border: 1px solid rgb(154, 34, 154);
+    border-radius: 7px;
+    background-color:rgb(154, 34, 154);
+    padding: 0.5rem 1rem;
+    color: white;
+}
+

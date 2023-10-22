@@ -2,18 +2,23 @@
 
 {% block main %}
 {% apply spaceless %}
+
+<div class="container" style="border: 1px solid black;">
+
+    <p class="mt-4 category_text">List of categories</p>
 <nav>
-    <ul>
-
+<ul>
     {% for category in categories %}
-<li>
-    <a href="/category/{{category.category_id}}">
-    {{ category.name|escape|title}}
-    </a>
-    {% endfor %}
-</li>
-
+    <li> <a href="/category/{{category.category_id}}"> {{ category.name|escape|title}}</a>
+        {% endfor %}
+    </li>
+      <ul>
+        <li><a href="##"></a></li>
+      </ul>
+    </li>
 </ul>
+
 </nav>
+</div>
 {% endapply %}
 {% endblock %}
