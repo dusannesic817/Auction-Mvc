@@ -6,6 +6,7 @@ use \App\Core\Controller;
 use App\Core\DatabaseConnection;
 
 
+
 class CategoryController extends Controller {
 
     public function show($id){
@@ -25,7 +26,8 @@ class CategoryController extends Controller {
         $auctionsInCategory = $auctionModel->getAllbyCategoryId($id);
 
         $this->set('auctionsInCategory', $auctionsInCategory);
-        
+
+
     }
 
 }

@@ -64,6 +64,32 @@
 .items_list li a{
     text-decoration: none;
     font-family: system-ui;
-    font-weight: bold;
+    font-weight:500;
 }
+.items_list li a:hover{
+    text-decoration: underline;
+    font-family: system-ui;
+    font-weight:500;
+}
+
+.subitems_list{
+    list-style-type: none;
+}
+
+.subitems_list li a{
+    font-weight:400;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(56, 56, 56);
+    
+}
+
+.subitems_list li a:hover{
+    text-decoration: underline;
+    font-family: system-ui;
+    font-weight:500;
+}
+
+
+
 

@@ -5,23 +5,30 @@
 <div class="container" style="border: 1px solid black;">
     <p class="mt-4 category_text">List of categories</p>
     <div class="row mx-auto">
-      {% for category in categories %}
-        <div class="col-3">
-          <ul class="items_list">
-            <li>
-              <a href="/category/{{category.category_id}}">
-                {{ category.name|escape|title }}
-              </a>
-            </li>
-            <ul class="items_list">
-              <li><a href="#"></a></li>
-            </ul>
-          </ul>
-        </div>
-      {% endfor %}
+        {% for uniqueCategory in uniqueCategories %}
+            <div class="col-3">
+                <ul class="items_list">
+                    <li>
+                        <a href="/category/{{uniqueCategory.category_id}}">
+                            {{ uniqueCategory.cat_name|escape|title }}
+                        </a>
+                        <ul class="subitems_list">
+                            {% for subCategory in uniqueCategory.sub_category %}
+                                <li>
+                                    <a href="#">{{ subCategory|escape|title }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        {% endfor %}
     </div>
-  </div>
-  
-  
+</div>
 {% endapply %}
 {% endblock %}
+
+
+
+
+
