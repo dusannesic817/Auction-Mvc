@@ -86,8 +86,9 @@
 
 .subitems_list li a:hover{
     text-decoration: underline;
-    font-family: system-ui;
-    font-weight:500;
+    font-weight:400;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(56, 56, 56);
 }
 
 
