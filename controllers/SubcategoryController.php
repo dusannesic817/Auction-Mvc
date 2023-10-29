@@ -5,6 +5,7 @@ use App\Core;
 use \App\Core\Controller;
 use App\Core\DatabaseConnection;
 use App\Models\SubcategoryModel;
+use App\Models\OfferModel;
 
 
 
@@ -16,8 +17,11 @@ class SubcategoryController extends Controller {
       $subcategories=$subcategoryModel->getAllIProductnformation($id);
       $this->set('subcategories', $subcategories);
 
-     
+
+
 
     }
+
+
 
 }

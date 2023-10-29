@@ -35,6 +35,7 @@ class SubcategoryModel  extends Model{
         FROM auction
         LEFT JOIN category ON auction.category_id= category.category_id
         LEFT JOIN subcategory ON auction.subcategory_id= subcategory.subcategory_id
+        LEFT JOIN user ON auction.user_id= user.user_id
         WHERE subcategory.subcategory_id= ?";
 
         $stmt=$this->getConnection()->prepare($sql);

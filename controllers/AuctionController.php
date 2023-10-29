@@ -47,6 +47,8 @@ class  AuctionController extends Controller {
 
         );
 
+  
+
 
     }
 
@@ -67,5 +69,21 @@ class  AuctionController extends Controller {
 
         return $price;
     }
+
+    public function countOffer($id){
+        $offerModel= new OfferModel($this->getDatabaseConnection());
+        $offer=$offerModel->getAllByFieldName('auction_id',$id);
+  
+        $counter=0;
+  
+        foreach($offer as $value){
+            
+          if($value->auction_id){
+            $counter++;
+          }
+        }
+  
+        return $counter;
+      }
 
 }
