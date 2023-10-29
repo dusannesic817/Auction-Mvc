@@ -49,7 +49,7 @@ class __TwigTemplate_48b673f7eda9c914f1268864b7f2d7ca extends Template
         // line 4
         ob_start(function () { return ''; });
         // line 5
-        echo "<div class=\"container\" style=\"border: 1px solid black;\">
+        echo "<div class=\"container\">
     <p class=\"mt-4 category_text\">List of categories</p>
     <div class=\"row mx-auto\">
         ";
@@ -74,13 +74,15 @@ class __TwigTemplate_48b673f7eda9c914f1268864b7f2d7ca extends Template
                             ";
             // line 16
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["uniqueCategory"], "sub_category", [], "any", false, false, false, 16));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["uniqueCategory"], "sub_categories", [], "any", false, false, false, 16));
             foreach ($context['_seq'] as $context["_key"] => $context["subCategory"]) {
                 // line 17
                 echo "                                <li>
-                                    <a href=\"#\">";
+                                    <a href=\"/subcategory/";
                 // line 18
-                echo twig_escape_filter($this->env, twig_title_string_filter($this->env, twig_escape_filter($this->env, $context["subCategory"])), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["subCategory"], "sub_id", [], "any", false, false, false, 18), "html", null, true);
+                echo "\">";
+                echo twig_escape_filter($this->env, twig_title_string_filter($this->env, twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["subCategory"], "subc_name", [], "any", false, false, false, 18))), "html", null, true);
                 echo "</a>
                                 </li>
                             ";
@@ -119,7 +121,7 @@ class __TwigTemplate_48b673f7eda9c914f1268864b7f2d7ca extends Template
 
     public function getDebugInfo()
     {
-        return array (  107 => 4,  102 => 26,  92 => 21,  83 => 18,  80 => 17,  76 => 16,  70 => 13,  66 => 12,  61 => 9,  57 => 8,  52 => 5,  50 => 4,  46 => 3,  35 => 1,);
+        return array (  109 => 4,  104 => 26,  94 => 21,  83 => 18,  80 => 17,  76 => 16,  70 => 13,  66 => 12,  61 => 9,  57 => 8,  52 => 5,  50 => 4,  46 => 3,  35 => 1,);
     }
 
     public function getSourceContext()

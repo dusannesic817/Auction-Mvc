@@ -49,9 +49,9 @@
 
 .category_text{
 
-    border: 1px solid rgb(154, 34, 154);
+    border: 1px solid rgb(172, 116, 172);
     border-radius: 7px;
-    background-color:rgb(154, 34, 154);
+    background-color:rgb(177, 112, 177);
     padding: 0.5rem 1rem;
     color: white;
 }
@@ -81,6 +81,7 @@
     text-decoration: none;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: rgb(56, 56, 56);
+    margin-left: -1.96rem;
     
 }
 

@@ -2,7 +2,7 @@
 
 {% block main %}
 {% apply spaceless %}
-<div class="container" style="border: 1px solid black;">
+<div class="container">
     <p class="mt-4 category_text">List of categories</p>
     <div class="row mx-auto">
         {% for uniqueCategory in uniqueCategories %}
@@ -13,9 +13,9 @@
                             {{ uniqueCategory.cat_name|escape|title }}
                         </a>
                         <ul class="subitems_list">
-                            {% for subCategory in uniqueCategory.sub_category %}
+                            {% for subCategory in uniqueCategory.sub_categories %}
                                 <li>
-                                    <a href="#">{{ subCategory|escape|title }}</a>
+                                    <a href="/subcategory/{{subCategory.sub_id}}">{{ subCategory.subc_name|escape|title }}</a>
                                 </li>
                             {% endfor %}
                         </ul>
@@ -27,8 +27,5 @@
 </div>
 {% endapply %}
 {% endblock %}
-
-
-
 
 

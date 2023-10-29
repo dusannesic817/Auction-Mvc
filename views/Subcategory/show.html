@@ -1,0 +1,21 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+<div class="container  mt-5">
+    <h1> <h1>
+        {% for subcategories in subcategories %}
+            <p>
+                <a href="/auction/{{subcategories.auction_id}}"> {{subcategories.title}}</a>
+                , Pice {{ subcategories.started_price}}
+                <p>
+
+
+                {% endfor %}
+</div>
+            {% endblock %}
+
+
+{% block title %}
+{{ category.name|escape}}
+{% endblock %}
+
