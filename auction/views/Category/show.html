@@ -1,0 +1,23 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+<div class="container  mt-5">
+<h1>{{ category.name|escape}} <h1>
+    <p>Spisak Aukcija u ovoj kateroiji je: <p>
+        <ul>
+            {% for auction in auctionsInCategory %}
+            <a href="{{BASE}}auction/{{auction.auction_id}}">
+                {{auction.title|escape}}
+                
+            </a>
+            <p>{{auction.description|escape}}</p>
+            {% endfor %}
+        </ul>
+    </div>
+
+            {% endblock %}
+
+{% block title %}
+{{ category.name|escape}}
+{% endblock %}
+

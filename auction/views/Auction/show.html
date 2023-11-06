@@ -1,0 +1,19 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+<div class="container  mt-5">
+<h1>{{ auction.title|escape}} <h1>
+    <p>Opis:  {{ auction.description|escape}}<p>
+    <p>Cena:  {{ lastOfferPrice }} DINARA<p>
+    <p>Pocetni Datum aukcije  {{ auction.created_at|date('j. n. Y.')}} <p>
+    <p>Zavrsni Datum aukcije  {{ auction.expires_at|date('j. n. Y.')}} <p>
+        <a href="{{BASE}}user/{{auction.user_id}}">Contact</a>
+
+    </div>
+
+            {% endblock %}
+
+{% block title %}
+{{ category.title|escape}}
+{% endblock %}
+

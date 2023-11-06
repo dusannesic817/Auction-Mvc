@@ -1,0 +1,31 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+{% apply spaceless %}
+<div class="container">
+    <p class="mt-4 category_text">List of categories</p>
+    <div class="row mx-auto">
+        {% for uniqueCategory in uniqueCategories %}
+            <div class="col-3">
+                <ul class="items_list">
+                    <li>
+                        <a href="{{BASE}}category/{{uniqueCategory.category_id}}">
+                            {{ uniqueCategory.cat_name|escape|title }}
+                        </a>
+                        <ul class="subitems_list">
+                            {% for subCategory in uniqueCategory.sub_categories %}
+                                <li>
+                                    <a href="{{BASE}}subcategory/{{subCategory.sub_id}}">{{ subCategory.subc_name|escape|title }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endapply %}
+{% endblock %}
+
+

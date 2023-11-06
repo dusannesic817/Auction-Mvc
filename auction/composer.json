@@ -1,0 +1,20 @@
+{
+    "name": "dusan/test-app",
+    "type": "project",
+   
+    
+    "authors": [
+        {
+            "name": "dusannesic817",
+            "email": "dusannesic28@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\" : ""
+        }
+    }
+}
