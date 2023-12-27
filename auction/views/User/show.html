@@ -1,17 +1,30 @@
 {% extends "_global/index.html" %}
 
 {% block main %}
-<div class="container  mt-5">
-    <p>{{ userAuction.forename|escape}}</p>
-    <p>{{ userAuction.surname|escape}}</p>
-    <p>{{ userAuction.email|escape}}</p>
-    <p>{{ userAuction.phone|escape}}</p>
-
+<div class="row  mt-5" style="background-color:  rgb(255, 233, 255);">
+    <div class="col-3 " style="text-align: right;"><i class="fa-solid fa-user-tie fa-2xl pt-5 pl-2" style="color: #b2c2df;"></i></div>
+    <div class="col-3 ">
+        <div class="d-flex flex-column mb-3">
+            <div class="p-1" style="font-size: 14px;">Broj pozitivnih</div>
+            <div class="p-1" style="font-size: 14px;">Member from: dodati u bazi </div>
+            <div class="p-1" style="font-size: 14px;">Poslednji oglas: napraviti funkciju</div>
+          </div>
     </div>
+    <div class="col-md-auto ms-auto ">Treći didasdasdasdv</div>
+</div>
 
-            {% endblock %}
+<div class="container mt-5">
+
+
+    {% for single_user in users %}
+    {{single_user.title}}
+
+    {% endfor %}
+
+
+</div>
+{% endblock %}
 
 {% block title %}
-{{ userAuction.forname|escape}}
 {% endblock %}
 

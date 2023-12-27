@@ -4,17 +4,18 @@ namespace App\Controllers;
 use App\Core;
 use \App\Core\Controller;
 use App\Core\DatabaseConnection;
+use App\Models\UserModel;
 
 
 class UserController extends Controller {
 
     public function show($id){
 
-        $auctionModel = new \App\Models\AuctionModel($this->getDatabaseConnection());
-        $userAuction= $auctionModel->getUserId($id);
-
-      
-        $this->set('userAuction', $userAuction);
+       $userModel=new UserModel($this->getDatabaseConnection());
+       $users=$userModel->getAllbyUser($id);
+        
+        $this->set('users', $users);
+        var_dump($users);
 
 }
 }

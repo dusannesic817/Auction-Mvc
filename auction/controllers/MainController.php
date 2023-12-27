@@ -6,6 +6,9 @@ use \App\Core\Controller;
 use App\Core\DatabaseConnection;
 use App\Models\AuctionViewModel;
 use App\Models\SubcategoryModel;
+use App\Models\UserModel;
+use App\Validators\PasswordValidator;
+use App\Validators\UsernameValidator;
 
 
 class MainController extends Controller {
@@ -105,6 +108,96 @@ class MainController extends Controller {
         }
     
         return $uniqueArray;
+    }
+
+
+
+    public function getRegister(){
+        //..
+    }
+
+
+    public function postRegister(){
+
+        $email= \filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+        $username= \filter_input(INPUT_POST, 'username', FILTER_SANITIZE_EMAIL);
+        $password= \filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+        $password1= \filter_input(INPUT_POST, 'password1', FILTER_SANITIZE_STRING);
+        $surename= \filter_input(INPUT_POST, 'surename', FILTER_SANITIZE_STRING);
+        $forename= \filter_input(INPUT_POST, 'forename', FILTER_SANITIZE_STRING);
+        $adress= \filter_input(INPUT_POST, 'adress', FILTER_SANITIZE_STRING);
+        $phone= \filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING);
+
+        print_r(
+        [
+            $forename,
+            $surename,
+            $adress,
+            $phone,
+            $email,
+            $username,
+            $password,
+            $password1
+        ]
+        );
+        $validator =new PasswordValidator();
+
+        $passValidator=$validator->setPassword($password);
+        $usernameValidator= new UsernameValidator();
+        $userValidator= $usernameValidator->setUsername($username);
+
+        if($password != $password1){
+            $this->set('message','Doslo je do greske sifre se ne poklapaju');
+            return;
+        }elseif(!$passValidator){
+            $this->set('message', 'Sifra mora da sadrzi barem jedno veliko slovo, i broj');
+
+            return;
+        }elseif(!$userValidator){
+            $this->set('username',"Username must be between 4 and 20 char");
+            return;
+        }
+
+        $userModel= new UserModel($this->getDatabaseConnection());
+        $userEmail=$userModel->getAllByFieldName('email', $email);
+        if($userEmail){
+            $this->set('email',"This email already exist");
+            return;
+        }
+
+        $user=$userModel->getAllByFieldName('username',$username);
+            if($user){
+                $this->set('usern',"This username already exist");
+                return;  
+            }
+        
+        
+        $hasPassword= \password_hash($password,PASSWORD_DEFAULT);
+
+        $userId=$userModel->add([
+
+            'forename'=>$forename,
+            'surname'=>$surename,
+            'adress'=>$adress,
+            'phone'=>$phone,
+            'email'=>$email,
+            'username'=> $username,
+            'password'=>$hasPassword,
+
+            ]
+        );
+
+
+        if($userId){
+            $this->set('register',"Neuspela registracija");
+                return;  
+        }
+
+        $this->set('register',"Uspesna registracija");
+               
+
+   
+        
     }
     
 

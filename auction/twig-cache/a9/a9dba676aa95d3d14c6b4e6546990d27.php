@@ -47,46 +47,44 @@ class __TwigTemplate_48b673f7eda9c914f1268864b7f2d7ca extends Template
     {
         $macros = $this->macros;
         // line 4
-        ob_start(function () { return ''; });
-        // line 5
         echo "<div class=\"container\">
     <p class=\"mt-4 category_text\">List of categories</p>
-    <div class=\"row mx-auto\">
+    <div class=\"row\">
         ";
-        // line 8
+        // line 7
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["uniqueCategories"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["uniqueCategory"]) {
-            // line 9
-            echo "            <div class=\"col-3\">
+            // line 8
+            echo "            <div class=\"col-md-3 col-sm-6\">
                 <ul class=\"items_list\">
                     <li>
                         <a href=\"";
-            // line 12
+            // line 11
             echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
             echo "category/";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["uniqueCategory"], "category_id", [], "any", false, false, false, 12), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["uniqueCategory"], "category_id", [], "any", false, false, false, 11), "html", null, true);
             echo "\">
                             ";
-            // line 13
-            echo twig_escape_filter($this->env, twig_title_string_filter($this->env, twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["uniqueCategory"], "cat_name", [], "any", false, false, false, 13))), "html", null, true);
+            // line 12
+            echo twig_escape_filter($this->env, twig_title_string_filter($this->env, twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["uniqueCategory"], "cat_name", [], "any", false, false, false, 12))), "html", null, true);
             echo "
                         </a>
                         <ul class=\"subitems_list\">
                             ";
-            // line 16
+            // line 15
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["uniqueCategory"], "sub_categories", [], "any", false, false, false, 16));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["uniqueCategory"], "sub_categories", [], "any", false, false, false, 15));
             foreach ($context['_seq'] as $context["_key"] => $context["subCategory"]) {
-                // line 17
+                // line 16
                 echo "                                <li>
                                     <a href=\"";
-                // line 18
+                // line 17
                 echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
                 echo "subcategory/";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["subCategory"], "sub_id", [], "any", false, false, false, 18), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["subCategory"], "sub_id", [], "any", false, false, false, 17), "html", null, true);
                 echo "\">";
-                echo twig_escape_filter($this->env, twig_title_string_filter($this->env, twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["subCategory"], "subc_name", [], "any", false, false, false, 18))), "html", null, true);
+                echo twig_escape_filter($this->env, twig_title_string_filter($this->env, twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["subCategory"], "subc_name", [], "any", false, false, false, 17))), "html", null, true);
                 echo "</a>
                                 </li>
                             ";
@@ -94,7 +92,7 @@ class __TwigTemplate_48b673f7eda9c914f1268864b7f2d7ca extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['subCategory'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 21
+            // line 20
             echo "                        </ul>
                     </li>
                 </ul>
@@ -104,13 +102,10 @@ class __TwigTemplate_48b673f7eda9c914f1268864b7f2d7ca extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['uniqueCategory'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 26
+        // line 25
         echo "    </div>
 </div>
 ";
-        $___internal_parse_0_ = ('' === $tmp = ob_get_clean()) ? '' : new Markup($tmp, $this->env->getCharset());
-        // line 4
-        echo twig_spaceless($___internal_parse_0_);
     }
 
     public function getTemplateName()
@@ -125,7 +120,7 @@ class __TwigTemplate_48b673f7eda9c914f1268864b7f2d7ca extends Template
 
     public function getDebugInfo()
     {
-        return array (  113 => 4,  108 => 26,  98 => 21,  85 => 18,  82 => 17,  78 => 16,  72 => 13,  66 => 12,  61 => 9,  57 => 8,  52 => 5,  50 => 4,  46 => 3,  35 => 1,);
+        return array (  106 => 25,  96 => 20,  83 => 17,  80 => 16,  76 => 15,  70 => 12,  64 => 11,  59 => 8,  55 => 7,  50 => 4,  46 => 3,  35 => 1,);
     }
 
     public function getSourceContext()

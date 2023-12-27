@@ -24,16 +24,17 @@ class AuctionModel extends Model{
 
     }
 
-    public function getUserId($userId){
+    public function getAuctionUser($userId){
 
         $sql="SELECT 
-        user.forename,
-        user.surname,
-        user.email,
-        user.phone
-         FROM auction
-         LEFT JOIN user ON auction.user_id = user.user_id
-         WHERE auction.user_id=?";
+        auction.*,
+        COUNT(auction_view.ip_adress) AS views,
+        user.*
+        FROM auction
+        LEFT JOIN user ON auction.user_id = user.user_id
+        LEFT JOIN auction_view ON auction_view.auction_id = auction.auction_id
+        WHERE auction.auction_id = ?
+        GROUP BY auction.auction_id, user.user_id";
         $stmt= $this->getConnection()->prepare($sql);
         $res = $stmt->execute([$userId]);
         $user=NULL;
@@ -45,6 +46,20 @@ class AuctionModel extends Model{
         return $user;
 
     }
+
+    /*public function getViews($userId){
+
+        $user=$this->getAuctionUser($userId);
+
+        usort($user, function ($a,$b){
+            return strcmp($a->ip_adress, $b->ip_adress);
+        });
+
+        return $user;
+
+
+
+    }*/
 
 
 

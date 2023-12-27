@@ -48,60 +48,92 @@ class __TwigTemplate_1004034428f12e322c701a49e8aadcf4 extends Template
     {
         $macros = $this->macros;
         // line 4
-        echo "<div class=\"container  mt-5\">
-        ";
+        echo "<div class=\"container mt-5\">
+    ";
         // line 5
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable($context["subcategories"]);
-        foreach ($context['_seq'] as $context["_key"] => $context["subcategories"]) {
+        $context['_seq'] = twig_ensure_traversable(($context["subcategories"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["subcategory"]) {
             // line 6
-            echo "    <div class=\"d-flex justify-content-around\" style=\"border: 1px solid black;\">
-        <div style=\"border: 1px solid black;\">
-            image
-        </div>
-        <div class=\"d-flex flex-column mb-3\" style=\"border: 1px solid black; width: 500px;\">
-            <div  class=\"p-2\"><h3>";
-            // line 11
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["subcategories"], "title", [], "any", false, false, false, 11), "html", null, true);
-            echo "</h3></div>
-            <div  class=\"p-2\">
-            <table class=\"table table-striped\">
-                <tbody>
-                  <tr>
-                    <td scope=\"row\">Started Price:</td>
-                    <td>Mark</td>
-                  </tr>
-                </tbody>
-              </table>
+            echo "    <div class=\"row justify-content-center align-items-center\">
+        <div class=\"col-12 col-md-4 mb-3\">
+            <div class=\"border\">
+                <img src=\"\" height=\"50\" alt=\"";
+            // line 9
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["subcategory"], "alt_text", [], "any", false, false, false, 9), "html", null, true);
+            echo "\">
             </div>
         </div>
-        <div class=\"d-flex flex-column mb-3\" style=\"border: 1px solid black;\">
-            <div class=\"p-2\"><i class=\"bi bi-person-circle\"></i>  ";
-            // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["subcategories"], "username", [], "any", false, false, false, 24), "html", null, true);
+        <div class=\"col-12 col-md-4 mb-3\">
+            <div class=\"border\" style=\"width: 100%;\">
+                <a href=\"";
+            // line 14
+            echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+            echo "auction/";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["subcategory"], "auction_id", [], "any", false, false, false, 14), "html", null, true);
+            echo "\">
+                    <p style=\"font-size: 20px;\">";
+            // line 15
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["subcategory"], "title", [], "any", false, false, false, 15), "html", null, true);
+            echo "</p>
+                </a>
+                <table class=\"table\">
+                    <tbody>
+                        <tr>
+                            <td scope=\"row\"><p>Started Price:</p></td>
+                            <td><p>";
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["subcategory"], "max_price", [], "any", false, false, false, 21), "html", null, true);
+            echo "</p></td>
+                        </tr>
+                        <tr>
+                            <td scope=\"row\"><p>Stanje:</p></td>
+                            <td><p>";
+            // line 25
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["subcategory"], "condition", [], "any", false, false, false, 25), "html", null, true);
+            echo "</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class=\"col-12 col-md-4 mb-3\">
+            <div class=\"border\">
+                <a href=\"";
+            // line 33
+            echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+            echo "user/";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["subcategory"], "user", [], "any", false, false, false, 33), "html", null, true);
+            echo "\">
+                    <i class=\"fa-solid fa-user-tie fa-lg\" style=\"color: #d78c00;\"></i> ";
+            // line 34
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["subcategory"], "username", [], "any", false, false, false, 34), "html", null, true);
+            echo "
+                </a>
+                <div><i class=\"fa-solid fa-clock fa-lg\" style=\"color: #d78c00;\"></i> ";
+            // line 36
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["subcategory"], "days", [], "any", false, false, false, 36), "html", null, true);
             echo "</div>
-            <div class=\"p-2\"> <i class=\"bi bi-clock\"></i> preostalo vreme</div>
-            <div class=\"p-2\"></div>
+            </div>
         </div>
     </div>
-
+    <hr class=\"my-3\">
     ";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['subcategories'], $context['_parent'], $context['loop']);
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['subcategory'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 31
-        echo "    
-</div>
-            ";
+        // line 42
+        echo "</div>
+";
     }
 
-    // line 36
+    // line 45
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 37
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["category"] ?? null), "name", [], "any", false, false, false, 37));
+        // line 46
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["category"] ?? null), "name", [], "any", false, false, false, 46));
         echo "
 ";
     }
@@ -118,11 +150,11 @@ class __TwigTemplate_1004034428f12e322c701a49e8aadcf4 extends Template
 
     public function getDebugInfo()
     {
-        return array (  104 => 37,  100 => 36,  94 => 31,  81 => 24,  65 => 11,  58 => 6,  54 => 5,  51 => 4,  47 => 3,  36 => 1,);
+        return array (  136 => 46,  132 => 45,  127 => 42,  115 => 36,  110 => 34,  104 => 33,  93 => 25,  86 => 21,  77 => 15,  71 => 14,  63 => 9,  58 => 6,  54 => 5,  51 => 4,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("", "Subcategory/show.html", "C:\\xampp\\htdocs\\views\\Subcategory\\show.html");
+        return new Source("", "Subcategory/show.html", "C:\\xampp\\htdocs\\auction\\views\\Subcategory\\show.html");
     }
 }

@@ -48,37 +48,47 @@ class __TwigTemplate_c64654e0be296347763d06346d7108b0 extends Template
     {
         $macros = $this->macros;
         // line 4
-        echo "<div class=\"container  mt-5\">
-    <p>";
-        // line 5
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userAuction"] ?? null), "forename", [], "any", false, false, false, 5));
-        echo "</p>
-    <p>";
-        // line 6
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userAuction"] ?? null), "surname", [], "any", false, false, false, 6));
-        echo "</p>
-    <p>";
-        // line 7
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userAuction"] ?? null), "email", [], "any", false, false, false, 7));
-        echo "</p>
-    <p>";
-        // line 8
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userAuction"] ?? null), "phone", [], "any", false, false, false, 8));
-        echo "</p>
-
+        echo "<div class=\"row  mt-5\" style=\"background-color:  rgb(255, 233, 255);\">
+    <div class=\"col-3 \" style=\"text-align: right;\"><i class=\"fa-solid fa-user-tie fa-2xl pt-5 pl-2\" style=\"color: #b2c2df;\"></i></div>
+    <div class=\"col-3 \">
+        <div class=\"d-flex flex-column mb-3\">
+            <div class=\"p-1\" style=\"font-size: 14px;\">Broj pozitivnih</div>
+            <div class=\"p-1\" style=\"font-size: 14px;\">Member from: dodati u bazi </div>
+            <div class=\"p-1\" style=\"font-size: 14px;\">Poslednji oglas: napraviti funkciju</div>
+          </div>
     </div>
+    <div class=\"col-md-auto ms-auto \">Treći didasdasdasdv</div>
+</div>
 
-            ";
+<div class=\"container mt-5\">
+
+
+    ";
+        // line 19
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(($context["users"] ?? null));
+        foreach ($context['_seq'] as $context["_key"] => $context["single_user"]) {
+            // line 20
+            echo "    ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["single_user"], "title", [], "any", false, false, false, 20), "html", null, true);
+            echo "
+
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['single_user'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 23
+        echo "
+
+</div>
+";
     }
 
-    // line 14
+    // line 28
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 15
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["userAuction"] ?? null), "forname", [], "any", false, false, false, 15));
-        echo "
-";
     }
 
     public function getTemplateName()
@@ -93,7 +103,7 @@ class __TwigTemplate_c64654e0be296347763d06346d7108b0 extends Template
 
     public function getDebugInfo()
     {
-        return array (  79 => 15,  75 => 14,  66 => 8,  62 => 7,  58 => 6,  54 => 5,  51 => 4,  47 => 3,  36 => 1,);
+        return array (  89 => 28,  82 => 23,  72 => 20,  68 => 19,  51 => 4,  47 => 3,  36 => 1,);
     }
 
     public function getSourceContext()

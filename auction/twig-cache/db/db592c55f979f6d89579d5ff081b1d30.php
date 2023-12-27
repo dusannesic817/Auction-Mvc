@@ -53,7 +53,7 @@ class __TwigTemplate_35346ef7087793cfaf05069785cb5cf5 extends Template
         // line 11
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
         echo "public/css/style.css\">
-
+   <script src=\"https://kit.fontawesome.com/3f1d14d928.js\" crossorigin=\"anonymous\"></script>
 </head>
 <body>
 
@@ -76,7 +76,10 @@ class __TwigTemplate_35346ef7087793cfaf05069785cb5cf5 extends Template
         <div class=\"collapse navbar-collapse margine_right\" id=\"navbarSupportedContent\">
           <ul class=\"navbar-nav ms-auto mb-2 mb-lg-0\">
             <li class=\"nav-item\">
-              <a class=\"nav-link navbar_text_green \" aria-current=\"page\" href=\"/register\">Register</a>
+              <a class=\"nav-link navbar_text_green \" aria-current=\"page\" href=\"";
+        // line 32
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "user/register/\">Register</a>
             </li>
             <li class=\"nav-item\">
               <a class=\"nav-link navbar_text_orange\" href=\"";
@@ -120,36 +123,33 @@ class __TwigTemplate_35346ef7087793cfaf05069785cb5cf5 extends Template
           </li>
           
           <li class=\"nav-item dropdown\">
-            <a class=\"nav-link dropdown-toggle navbar_text\" href=\"";
-        // line 64
-        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "category/";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["category"] ?? null), "category_id", [], "any", false, false, false, 64), "html", null, true);
-        echo "\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
+            <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDarkDropdownMenuLink\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
               Categories
             </a>
+           
             <ul class=\"dropdown-menu\">
-                ";
-        // line 68
+              ";
+        // line 69
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["categories"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 69
+            // line 70
             echo "              <li><a class=\"dropdown-item\" href=\"";
             echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
             echo "category/";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category_id", [], "any", false, false, false, 69), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category_id", [], "any", false, false, false, 70), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 69), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 70), "html", null, true);
             echo "</a></li>
               ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 71
+        // line 72
         echo "              
             </ul>
+            
           </li>
         
         </ul>
@@ -161,9 +161,9 @@ class __TwigTemplate_35346ef7087793cfaf05069785cb5cf5 extends Template
   
         <main>
             ";
-        // line 83
+        // line 85
         $this->displayBlock('main', $context, $blocks);
-        // line 86
+        // line 88
         echo "        </main>
 
         <footer>
@@ -181,11 +181,11 @@ class __TwigTemplate_35346ef7087793cfaf05069785cb5cf5 extends Template
         echo "Home";
     }
 
-    // line 83
+    // line 85
     public function block_main($context, array $blocks = [])
     {
         $macros = $this->macros;
-        // line 84
+        // line 86
         echo "            
             ";
     }
@@ -202,7 +202,7 @@ class __TwigTemplate_35346ef7087793cfaf05069785cb5cf5 extends Template
 
     public function getDebugInfo()
     {
-        return array (  189 => 84,  185 => 83,  178 => 10,  167 => 86,  165 => 83,  151 => 71,  138 => 69,  134 => 68,  125 => 64,  115 => 57,  96 => 41,  90 => 38,  84 => 35,  67 => 21,  54 => 11,  50 => 10,  39 => 1,);
+        return array (  189 => 86,  185 => 85,  178 => 10,  167 => 88,  165 => 85,  150 => 72,  137 => 70,  133 => 69,  118 => 57,  99 => 41,  93 => 38,  87 => 35,  81 => 32,  67 => 21,  54 => 11,  50 => 10,  39 => 1,);
     }
 
     public function getSourceContext()

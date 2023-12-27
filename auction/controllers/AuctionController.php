@@ -13,7 +13,7 @@ class  AuctionController extends Controller {
     public function show($id){
 
         $auctionModel = new \App\Models\AuctionModel($this->getDatabaseConnection());
-        $auction = $auctionModel->getById($id);
+        $auction = $auctionModel->getAuctionUser($id);
 
         if(!$auction){
 
@@ -22,6 +22,12 @@ class  AuctionController extends Controller {
         }
 
         $this->set('auction', $auction);
+        
+        var_dump($auction);
+
+        //$counterView= $this->getCountViews($id);
+        //$this->set('counterView', $counterView);
+        //var_dump($counterView);
         
 
         
@@ -83,6 +89,24 @@ class  AuctionController extends Controller {
           }
         }
   
+        return $counter;
+      }
+
+
+      public function getCountViews($id){
+
+        $auctionModel= new AuctionModel($this->getDatabaseConnection());
+        $auction= $auctionModel->getViews($id);
+
+        $counter=0;
+        foreach($auction as $value){
+
+            if($value->ip_adress){
+                $counter++;
+            }
+        
+
+        }
         return $counter;
       }
 

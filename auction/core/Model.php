@@ -151,6 +151,7 @@ final  function getPrimaryKeyName(){
     }
 
     private function  checkFieldListValid(array $data) {
+       
         $fields= $this->getFields();
 
         $supportedFieldNames = array_keys($fields);
@@ -160,14 +161,14 @@ final  function getPrimaryKeyName(){
 
             if(!in_array($value, $supportedFieldNames)){
 
-                throw new \Exception('Field '. $value . 'is not supported');
+                throw new \Exception('Field '. $value . ' is not supported');
 
             }
         }
 
         if( !$fields[$value]->isEditable() ){
 
-            throw new \Exception('Field '. $value . 'is not editable');
+            throw new \Exception('Field '. $value . ' is not editable');
 
         }
 
@@ -233,9 +234,11 @@ final  function getPrimaryKeyName(){
         $stmt= $this->dbc->getConnection()->prepare($sql);
         return $stmt->execute([$id]);
  
-
+        
 
     }
+
+    
 
 
 

@@ -1,15 +1,96 @@
 {% extends "_global/index.html" %}
 
-{% block main %}
-<div class="container  mt-5">
-<h1>{{ auction.title|escape}} <h1>
-    <p>Opis:  {{ auction.description|escape}}<p>
-    <p>Cena:  {{ lastOfferPrice }} DINARA<p>
-    <p>Pocetni Datum aukcije  {{ auction.created_at|date('j. n. Y.')}} <p>
-    <p>Zavrsni Datum aukcije  {{ auction.expires_at|date('j. n. Y.')}} <p>
-        <a href="{{BASE}}user/{{auction.user_id}}">Contact</a>
+{% block main %}    
 
+    <div class="container mt-5">
+        <div class="row" style="height: 500px;">
+            <div class="col-sm-12 col-md-6 col-lg-3 border">
+                <div class="border" style="height: 350px;">main image</div>
+                <div class="border d-flex justify-content-evenly mt-3">
+                    <div class="border" style="height: 80px;">image1</div>
+                    <div class="border">image2</div>
+                    <div class="border">image3</div>
+                    <div class="border">image4</div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 border">
+                <h3  class="border" style="text-align: center;">{{ auction.title|escape}}</h3>
+                <div class="border info-container d-flex flex-column mb-3">
+                    <div class="border p-2">
+                       Trenutna cena: {{ lastOfferPrice }} din
+                    </div>
+                    <div class="border p-2">
+                       
+                          <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Licitiraj" aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2" style="color: white; background-color:  rgb(250, 179, 47);" >Licitiraj</button>
+                          </div>
+                          
+                    </div>
+                    <div class="border p-2">
+                        
+                        <div class="d-flex justify-content-between">
+                            <div>{{ auction.created_at|date('j. n. Y.')}}//</div>
+                            <div>Koliko ima ponuda za ovu auciju</div>
+                          </div>
+                    </div>
+                    <div class="border p-2">
+                        <i class="fa-regular fa-eye fa-xl" style="color: rgb(12, 176, 12);;"></i> {{ auction.views|escape }}
+                    </div>
+                </div>       
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-3 border">
+                <div class="card" style="background-color: rgb(255, 233, 255);">
+                    <div class="card-body">
+                        <h5>Prodavac</h5>
+                        <div class="d-flex flex-column mb-3"></div>
+                        <div class="p-2"><a href="{{BASE}}user/{{auction.user_id}}"> <i class="fa-solid fa-user-tie fa-2xl" style="color: #f1aa26;"></i> {{auction.username}}</a></div>
+                        
+                            <div class="p-2"><h6>{{auction.forename}} {{auction.surname}}</h6></div>
+                            <div class="p-2"><i class="fa-regular fa-thumbs-up fa-lg"></i> %</div>
+                            <div class="p-2"><i class="fa-regular fa-thumbs-up fa-lg"></i> Number of positive</div>
+                            <div class="p-2"><i class="fa-solid fa-location-dot fa-lg"></i> {{auction.adress}}</div>
+                            <div class="p-2"><i class="fa-solid fa-phone fa-lg"></i> {{auction.phone}}</div>
+                          </div>
+                    </div>
+                  </div>
+            </div>
+
+        </div>
     </div>
+    <div class="container">
+        <div class="row mt-5" style="height: 300px;">
+           
+            <div class=" col-md-4 border">
+                <div>Info</div>
+                <div>
+                    <table class="table" style="background-color: rgb(255, 233, 255);">
+                        <tbody>
+                          <tr>
+                            <td scope="row" class=""><p style="margin-left:  3.125rem;">Condition</p></td>
+                            <td><p style="margin-left: -12.5rem;">{{auction.condition}}</p></td>
+                          </tr>
+                          <tr>
+                            <td scope="row"><p style="margin-left:  3.125rem;">Other:</p></td>
+                            <td><p style="margin-left: -12.5rem;">??</p></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+            <div class=" col-md-8 border">
+                <div >
+                    <div>Description:</div>
+                    {{ auction.description|escape}}
+                </div>    
+                <div>Payment</div>    
+            </div>
+
+        </div>
+    </div>
+
+
+
 
             {% endblock %}
 
